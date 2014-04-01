@@ -1,0 +1,128 @@
+\documentclass[a4paper,10pt]{article}
+%A Few Useful Packages
+\usepackage{calc}
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+%https://www.sharelatex.com/templates/cv-or-r%C3%A9sum%C3%A9/professional-cv
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+\usepackage[absolute]{textpos}
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage}
+\usepackage{hyperref}
+
+\begin{document}    
+
+%logo insert
+\begin{flushright}
+\includegraphics[width=.5 in]{Logo2.png}
+\end{flushright}
+
+%header footer rules%
+\lhead{}
+\chead{\leftmark}
+\rhead{}
+\lfoot{Erik Anderson} 
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+\chead{}
+\renewcommand\headrule{}
+
+%--------------------BEGIN DOCUMENT----------------------
+\par{\centering
+		{\Huge Erik \textsc{Anderson}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Data}
+
+\begin{tabular}{rl}
+    \textsc{Location:} & Washington, DC   \\
+    \textsc{Address:}   & 1401 N. Street, N.W. Apt 305, Washington D.C. 20005 \\
+    \textsc{Phone:}     & 202 709-EAQA\\
+    \textsc{Web:}     & \href{http://EAQA.info/}{eaqa.info}\\
+    \textsc{email:}     & \href{mailto:erik@eaqa.info}{erik@eaqa.info}
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+ \textsc{JUN 2011 - MAR 2014} & Quality Control Coordinator
+ at \textsc{MMG}, Washington, D.C. \\&\footnotesize{Within an Agile/scrum Web Programming context, was the main point of contact for Project Management and Development teams along the SDLC in Quality Assurance testing. Developed testing methodologies, involving white and black box testing to insure functional, design, security and 508/Accessibility adherence, and data layer integrity. Multiple platforms were at play—from traditional websites to responsive (bootstrap 3) HTML5/CSS3 websites to native iPhone or Android applications and games. Full spectrum testing was employed, from the start of code genesis to maintenance contracts. Testing not only involved the separate layers of front and back ends, and database records, but to the integration testing of each of these units, involving API and data flow testing—to insure proper functionalities across the full lifecycle of the application under test. Testing emphasis 
+was uniting QA to Development needs on a project-by-project basis, involving iterative code releases and version control, within a 
+continuous integration system, using plastic SCM/TeamCity/GIT and YouTrack bug tracking systems.
+Clients included: National Institutes of Health, National Cancer Institute, 
+GlaxoSmithKline}\\\multicolumn{2}{c}{} \\
+\textsc{APR 2009 - MAR 2010} & Quality Control Engineer
+at \textsc{agencyQ}, Washington, D.C.\\&\footnotesize{Within an Agile Web Programming context, key member along the SDLC, providing testing methodologies to the development process of web applications for the design, UX, code and project management departments. Tested application adherence to fundamental keystones of business and functional requirements, with strict concern for browser compatibility and usability.  QA toolbox spans the full spectrum from white- to black-box testing. Projects included QA for custom CMS implementations.
+Clients included: Pew Internet Trust, Alliance for Climate Protection}\\\multicolumn{2}{c}{} \\
+\textsc{FEB 2007 - MAR 2009} & Quality Assurance Lead
+at \textsc{Threespot Media}, Washington, D.C.\\&\footnotesize{Verified the overall quality of work by providing an independent “second pair of eyes” to production teams throughout the SDLC of web applications. Gained a solid background in Web technologies, design issues and software requirements, as a professional and courteous problem solver. Developed appropriate test plans and tested components according to documentation, graphic designs, and HTML/CSS templates, across multiple browsers and platforms within the scope of functionality, business and other performance benchmarks. Used critical clear written and oral communication skills so that the project teams could remedy all defects identified by the QA Lead as expeditiously as possible. Regularly used Quickbase, Trac and Bugzilla bug/issue tracking systems.
+Clients included: The Brookings Institution, Kennedy Center/ARTSEDGE, NPR, and Peace Corps}\\\multicolumn{2}{c}{} \\
+\textsc{AUG 2006 - FEB 2007} & Project Manager Associate Intern
+at \textsc{Threespot Media}, Washington, D.C.\\&\footnotesize{Delivered multi-range project management support for all Threespot’s interactive accounts.  Duties included QA testing, database management, Gantt chart/project scope development, and project management support.}
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}
+\textsc{AUG 1997 - MAY 2000}  & Bachelor's Degree, \textbf{Guilford College}, Greensboro North Carolina\\
+& Major: Applied Studio Arts\\&\\
+\textsc2011& Specialized Coursework, \textbf{Association for Software Testing (AST)}\\
+&\normalsize Black Box Software Testing Foundation Certificate\\&\\
+\end{tabular}
+\section{Skills and Proficiencies}
+\begin{flushleft}
+\textsc{Agile/scrum methodology}\\ \textsc{Clear written and oral communication}\\ \textsc{Expert knowledge of the SDLC/Bug Life Cycle}\\ \textsc{Testing Types: functional, browser compatibility, usability, front-end/back-end, migration/integration, Security, Regression (N+1)}\\ \textsc{Testcase and Usecase creation}\\ \textsc{Responsive/RWD Testing} - a'la {Bootstrap 3}\\ \textsc{Native Mobile App Testing}\\ \textsc{Database | Dataflow Testing}\\ \textsc{API Testing}\\ \textsc{Accessibility | 508 Testing}\\  \textsc{HTML, CSS, SQL, JAVASCRIPT}\\\textsc{Blackbox/Whitebox Testing}\\ \textsc{Automation | Selenium}\\ 
+\end{flushleft}
+
+
+%Made with Latex section
+\vspace{115 mm}
+\begin{center}
+\fbox{%
+\textsc {Formatted With}
+\raisebox{-3.5pt}{\includegraphics[width=.5 in]{latex.png}}}
+\end{center}
+
+
+
+
+\end{document}
